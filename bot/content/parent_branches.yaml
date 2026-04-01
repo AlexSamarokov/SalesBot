@@ -1,0 +1,2806 @@
+branches:
+  - branch:
+      id: "parent_school_math"
+      role: "role_parent"
+      goal: "goal_school_math"
+      title: "Родитель → подтянуть школьную математику"
+      purpose: >
+        Последовательно довести родителя до мысли, что проблему можно спокойно
+        разобрать, Менториум — это не случайный репетитор, а система, пробное —
+        полезный и безопасный следующий шаг, а если родитель не готов записаться
+        сразу, он может перейти в nurture-цепочку и позже написать менеджеру.
+
+      screens:
+        - screen:
+            id: "parent_schoolmath_4"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 4 — узнавание ситуации"
+            purpose: >
+              Показать родителю, что бот понимает его контекст и что проблема
+              обычно не в способностях ребёнка, а в накопившемся непонимании.
+
+            text: |
+              Поняли вас.
+
+              Если вы сейчас ищете помощь по математике для ребёнка, то, скорее всего, проблема не в том, что он “не способен” к предмету.
+
+              Обычно в какой-то момент просто пошло непонимание:
+              одна тема не до конца уложилась,
+              потом сверху наложилась следующая,
+              и дальше математика начинает казаться всё тяжелее.
+
+              В итоге ребёнок может что-то учить, что-то даже решать,
+              но общей уверенности всё равно нет.
+
+              Сейчас коротко покажем, как мы в Менториуме с этим работаем 👇
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_schoolmath_5"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_schoolmath_5"
+
+            analytics_tags:
+              screen_group: "parent_schoolmath"
+              funnel_stage: "branch_core"
+              screen_order: 4
+              branch_id: "parent_school_math"
+              role: "parent"
+              goal: "school_math"
+
+            implementation_notes:
+              - "Первый экран ветки после общей сегментации."
+              - "Экран должен работать без медиа в MVP."
+
+        - screen:
+            id: "parent_schoolmath_5"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 5 — типичная ситуация"
+            purpose: >
+              Углубить узнавание и назвать типичные состояния родителей, которые ищут
+              помощь по школьной математике.
+
+            text: |
+              Обычно в такой ситуации родители приходят к нам примерно с одним из таких ощущений:
+
+              — ребёнок старается, но всё равно путается
+              — оценки начинают проседать
+              — в школе объясняют, но до конца не доходит
+              — математика стала предметом, который вызывает напряжение
+              — непонятно, с чего вообще начинать, чтобы это исправить
+
+              И в такой момент важнее не просто срочно добавить ещё занятий,
+              а сначала спокойно понять, где именно ребёнок просел и какой формат помощи ему действительно подойдёт.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_schoolmath_6"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_schoolmath_6"
+
+            analytics_tags:
+              screen_group: "parent_schoolmath"
+              funnel_stage: "branch_core"
+              screen_order: 5
+              branch_id: "parent_school_math"
+              role: "parent"
+              goal: "school_math"
+
+            implementation_notes:
+              - "Нельзя перегружать этот экран дополнительными CTA."
+
+        - screen:
+            id: "parent_schoolmath_6"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 6 — как работает Менториум"
+            purpose: >
+              Показать механику сервиса и ключевые УТП под запрос на школьную математику.
+
+            text: |
+              Поэтому в Менториуме мы не просто даём занятия по математике.
+
+              Мы выстраиваем работу так, чтобы вашему ребёнку действительно стало понятнее и чтобы прогресс был виден не на словах, а по ходу обучения.
+
+              Что это значит на практике:
+
+              — только индивидуальные занятия, без групп
+              — преподавателя подбираем под цель и под самого ученика
+              — выстраиваем индивидуальный план подготовки
+              — каждую неделю даём индивидуальные контрольные под конкретную задачу
+              — отправляем родителю отчёты по прогрессу
+              — у каждого ученика есть личный ассистент-математик
+              — с ребёнком работают только молодые преподаватели, студенты топовых вузов России, чтобы ученик и преподаватель были на одной волне
+
+              То есть здесь всё выстроено под конкретного ребёнка и его реальную ситуацию.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_schoolmath_7"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_schoolmath_7"
+
+            analytics_tags:
+              screen_group: "parent_schoolmath"
+              funnel_stage: "branch_core"
+              screen_order: 6
+              branch_id: "parent_school_math"
+              role: "parent"
+              goal: "school_math"
+
+            implementation_notes:
+              - "Экран опирается на УТП школы."
+              - "В будущем сюда можно добавить карточку с преимуществами."
+
+        - screen:
+            id: "parent_schoolmath_7"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 7 — зачем начинать с пробного"
+            purpose: >
+              Снять главный страх родителя: подойдёт ли преподаватель и будет ли толк от занятий.
+
+            text: |
+              Если вы сейчас в поиске репетитора, то, скорее всего, вам важно не просто найти преподавателя по математике.
+
+              Вам важно понять:
+
+              — подойдёт ли он именно вашему ребёнку
+              — будет ли ребёнку с ним понятно
+              — появится ли от занятий реальный прогресс
+              — и не окажется ли это ещё одной пустой попыткой
+
+              И это нормальный вопрос.
+
+              Поэтому мы начинаем с пробного:
+              чтобы сначала спокойно разобраться в ситуации,
+              а потом уже понимать, как двигаться дальше.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_schoolmath_8"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_schoolmath_8"
+
+            analytics_tags:
+              screen_group: "parent_schoolmath"
+              funnel_stage: "branch_core"
+              screen_order: 7
+              branch_id: "parent_school_math"
+              role: "parent"
+              goal: "school_math"
+
+            implementation_notes:
+              - "Не использовать формулировку про 'не чтобы продавать занятия'."
+
+        - screen:
+            id: "parent_schoolmath_8"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 8 — как проходит пробное"
+            purpose: >
+              Объяснить механику пробного занятия и показать, что это полезный и
+              понятный шаг.
+
+            text: |
+              Пробное занятие у нас — это не просто первый урок.
+
+              Оно нужно, чтобы быстро понять текущую ситуацию ребёнка и показать, как с ней можно работать дальше.
+
+              На пробном мы обычно:
+
+              — знакомимся с учеником и смотрим, как он вообще воспринимает математику
+              — даём несколько заданий или вопросов по его уровню
+              — смотрим, где именно начинается непонимание
+              — объясняем один из моментов так, чтобы ребёнку уже на самом пробном стало понятнее
+              — в конце формируем понятный следующий шаг
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_schoolmath_9"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_schoolmath_9"
+
+            analytics_tags:
+              screen_group: "parent_schoolmath"
+              funnel_stage: "branch_core"
+              screen_order: 8
+              branch_id: "parent_school_math"
+              role: "parent"
+              goal: "school_math"
+
+            implementation_notes:
+              - "Позже сюда можно добавить короткое видео о пробном."
+
+        - screen:
+            id: "parent_schoolmath_9"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 9 — что родитель получает после пробного"
+            purpose: >
+              Продать результат пробного как понятную картину ситуации и следующий шаг.
+
+            text: |
+              После пробного у вас не остаётся ощущения “ну вроде поговорили”.
+
+              Вы получаете понятную картину:
+
+              — что у ребёнка сейчас получается лучше
+              — где именно основные слабые места
+              — что мешает двигаться дальше
+              — какой формат работы подойдёт лучше всего
+              — с чего логично начать, чтобы был прогресс
+
+              То есть пробное даёт не просто знакомство,
+              а первое понимание ситуации и следующий шаг.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_schoolmath_10"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_schoolmath_10"
+
+            analytics_tags:
+              screen_group: "parent_schoolmath"
+              funnel_stage: "branch_core"
+              screen_order: 9
+              branch_id: "parent_school_math"
+              role: "parent"
+              goal: "school_math"
+
+            implementation_notes:
+              - "Этот экран усиливает ценность пробного перед CTA."
+
+        - screen:
+            id: "parent_schoolmath_10"
+            type: "cta"
+            scope: "parent_branch"
+            title: "Экран 10 — главный CTA"
+            purpose: >
+              Мягко, но уверенно перевести родителя в контакт с менеджером.
+
+            text: |
+              Следующий шаг — просто написать менеджеру.
+
+              Он уточнит вашу ситуацию,
+              поможет сориентироваться,
+              подберёт подходящего преподавателя
+              и предложит удобное время для пробного.
+
+              Если вам так спокойнее, можно сначала просто задать вопрос без записи.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Записаться на пробное"
+                action: "open_trial_signup"
+                target: "manager_trial_signup_parent_schoolmath"
+
+              - text: "Задать вопрос"
+                action: "open_manager_chat"
+                target: "manager_question_parent_schoolmath"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Записаться на пробное": "manager_trial_signup_parent_schoolmath"
+                "Задать вопрос": "manager_question_parent_schoolmath"
+
+            analytics_tags:
+              screen_group: "parent_schoolmath"
+              funnel_stage: "cta"
+              screen_order: 10
+              branch_id: "parent_school_math"
+              role: "parent"
+              goal: "school_math"
+
+            implementation_notes:
+              - "Если пользователь не нажал ни одну кнопку CTA, он должен перейти в nurture-цепочку этой ветки."
+              - "В MVP можно также дублировать этот CTA через постоянное меню."
+
+      manager_messages:
+        trial_signup: |
+          Добрый день! Хочу записаться на пробное занятие по математике.
+        ask_question: |
+          Добрый день! У меня есть вопрос по занятиям по математике.
+
+      nurture:
+        id: "parent_school_math_nurture"
+        purpose: >
+          Мягко догревать родителя, если он прошёл основную ветку, но не написал менеджеру.
+
+        sequence:
+          - screen:
+              id: "parent_schoolmath_follow_1"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 1 — узнавание"
+              purpose: >
+                Вернуть родителя в узнавание его ситуации.
+
+              text: |
+                Иногда со стороны кажется, что ребёнок просто стал хуже в математике.
+
+                Но чаще дело не в том, что он “не может”.
+                Обычно где-то просто накопились непонятые темы, и дальше они начинают тянуть вниз всё остальное.
+
+                Из-за этого математика начинает ощущаться тяжёлой, даже если сам ребёнок не глупый и не ленивый.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_1_parent_schoolmath"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_schoolmath_follow_2"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_1_parent_schoolmath"
+                  "Читать дальше": "parent_schoolmath_follow_2"
+
+              analytics_tags:
+                screen_group: "parent_schoolmath"
+                funnel_stage: "nurture"
+                screen_order: 1
+                branch_id: "parent_school_math"
+                role: "parent"
+                goal: "school_math"
+
+          - screen:
+              id: "parent_schoolmath_follow_2"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 2 — полезная мысль"
+              purpose: >
+                Показать, что проблема не решается простым увеличением количества занятий.
+
+              text: |
+                Одна из самых частых ошибок — пытаться сразу заниматься больше, не понимая, где именно проблема.
+
+                А в математике это почти всегда работает хуже.
+
+                Сначала важно увидеть:
+                что именно у ребёнка уже не держится,
+                где он начинает путаться,
+                и что сейчас тянет вниз всё остальное.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_2_parent_schoolmath"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_schoolmath_follow_3"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_2_parent_schoolmath"
+                  "Читать дальше": "parent_schoolmath_follow_3"
+
+              analytics_tags:
+                screen_group: "parent_schoolmath"
+                funnel_stage: "nurture"
+                screen_order: 2
+                branch_id: "parent_school_math"
+                role: "parent"
+                goal: "school_math"
+
+          - screen:
+              id: "parent_schoolmath_follow_3"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 3 — снятие сомнения"
+              purpose: >
+                Снять сомнение и вернуть родителя к спокойной логике пробного.
+
+              text: |
+                Скорее всего, вам сейчас важно не просто найти ещё одного преподавателя.
+
+                Вам важно не потратить время впустую
+                и понять, подойдёт ли этот формат именно вашему ребёнку.
+
+                Поэтому здесь всё начинается спокойно:
+                сначала пробное,
+                потом понимание ситуации,
+                и только после этого уже решение, как двигаться дальше.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_3_parent_schoolmath"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_schoolmath_follow_4"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_3_parent_schoolmath"
+                  "Читать дальше": "parent_schoolmath_follow_4"
+
+              analytics_tags:
+                screen_group: "parent_schoolmath"
+                funnel_stage: "nurture"
+                screen_order: 3
+                branch_id: "parent_school_math"
+                role: "parent"
+                goal: "school_math"
+
+          - screen:
+              id: "parent_schoolmath_follow_4"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 4 — мягкий возврат к действию"
+              purpose: >
+                Последний мягкий возврат к менеджеру или перевод в более общий nurture.
+
+              text: |
+                Если захотите, можно просто написать менеджеру и коротко описать ситуацию.
+
+                Без обязательств.
+
+                Он поможет сориентироваться,
+                подскажет, подойдёт ли вам такой формат,
+                и если да — предложит удобное время для пробного.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_4_parent_schoolmath"
+
+                - text: "Пока просто читаю"
+                  action: "stay_in_nurture"
+                  target: "general_useful_nurture"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_4_parent_schoolmath"
+                  "Пока просто читаю": "general_useful_nurture"
+
+              analytics_tags:
+                screen_group: "parent_schoolmath"
+                funnel_stage: "nurture"
+                screen_order: 4
+                branch_id: "parent_school_math"
+                role: "parent"
+                goal: "school_math"
+
+        manager_messages:
+          follow_1: |
+            Добрый день! Похоже, у нас как раз такая ситуация. Хочу уточнить по пробному занятию.
+          follow_2: |
+            Добрый день! Хочу уточнить, как у вас проходит пробное и что вы на нём определяете.
+          follow_3: |
+            Добрый день! Хочу коротко описать нашу ситуацию и понять, подойдёт ли нам ваш формат.
+          follow_4: |
+            Добрый день! Хочу описать нашу ситуацию и понять, подойдёт ли нам такой формат занятий.
+
+  - branch:
+      id: "parent_exam"
+      role: "role_parent"
+      goal: "goal_exam"
+      title: "Родитель → ОГЭ / ЕГЭ"
+      purpose: >
+        Последовательно довести родителя до мысли, что подготовка к экзамену
+        должна идти не хаотично, а по понятному маршруту; что пробное —
+        это логичный способ понять текущий уровень ребёнка, слабые места
+        и следующий шаг; и что Менториум помогает выстроить системную
+        подготовку под экзамен.
+
+      screens:
+        - screen:
+            id: "parent_exam_4"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 4 — узнавание ситуации"
+            purpose: >
+              Показать родителю, что бот понимает его контекст:
+              ребёнок знает что-то частично, но целостной картины нет,
+              а подготовка идёт хаотично.
+
+            text: |
+              Поняли вас.
+
+              Когда речь идёт об ОГЭ или ЕГЭ, проблема обычно не в том, что ребёнок совсем ничего не знает.
+
+              Чаще ситуация выглядит так:
+              что-то он понимает,
+              какие-то темы знает частично,
+              где-то уже есть пробелы,
+              но целостной картины нет.
+
+              Из-за этого подготовка часто идёт хаотично:
+              ребёнок что-то решает,
+              что-то повторяет,
+              но непонятно, где именно слабые места и с чего сейчас важнее всего начинать.
+
+              Сейчас коротко покажем, как мы в Менториуме с этим работаем 👇
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_exam_5"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_exam_5"
+
+            analytics_tags:
+              screen_group: "parent_exam"
+              funnel_stage: "branch_core"
+              screen_order: 4
+              branch_id: "parent_exam"
+              role: "parent"
+              goal: "exam"
+
+            implementation_notes:
+              - "Первый экран ветки после общей сегментации."
+              - "Экран должен работать без медиа в MVP."
+
+        - screen:
+            id: "parent_exam_5"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 5 — типичная ситуация родителя перед экзаменом"
+            purpose: >
+              Углубить узнавание и назвать типичные состояния родителя:
+              тревога, отсутствие системы, страх потерять время.
+
+            text: |
+              Обычно в такой ситуации родители приходят к нам примерно с одним из таких ощущений:
+
+              — экзамен уже приближается, а полной уверенности нет
+              — ребёнок что-то знает, но подготовка идёт без системы
+              — непонятно, какие темы реально западают
+              — есть страх потерять время на хаотичную подготовку
+              — хочется не просто “заниматься математикой”, а понимать, как прийти к результату
+
+              И в такой момент важнее не просто срочно добавить ещё занятий,
+              а сначала спокойно понять текущий уровень ребёнка и выстроить нормальный маршрут подготовки.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_exam_6"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_exam_6"
+
+            analytics_tags:
+              screen_group: "parent_exam"
+              funnel_stage: "branch_core"
+              screen_order: 5
+              branch_id: "parent_exam"
+              role: "parent"
+              goal: "exam"
+
+            implementation_notes:
+              - "Этот экран усиливает ощущение хаоса без системы."
+              - "Не добавлять дополнительных CTA кроме кнопки перехода дальше."
+
+        - screen:
+            id: "parent_exam_6"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 6 — как работает Менториум в экзаменационной задаче"
+            purpose: >
+              Показать механику сервиса и УТП школы именно в контексте
+              экзаменационной подготовки.
+
+            text: |
+              Поэтому в Менториуме мы не просто даём занятия по математике.
+
+              Мы выстраиваем подготовку так, чтобы у ребёнка была не разрозненная подготовка, а понятная система движения к экзамену.
+
+              Что это значит на практике:
+
+              — только индивидуальные занятия, без групп
+              — преподавателя подбираем под цель и уровень ученика
+              — выстраиваем индивидуальный план подготовки
+              — каждую неделю даём индивидуальные контрольные под конкретную задачу
+              — видим, какие темы ребёнок уже понимает уверенно, а какие ещё нужно усиливать
+              — отправляем родителю отчёты по прогрессу
+              — у каждого ученика есть личный ассистент-математик
+              — с ребёнком работают только молодые преподаватели, студенты топовых вузов России, чтобы ученик и преподаватель были на одной волне
+
+              То есть подготовка идёт не “как получится”, а по понятному маршруту.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_exam_7"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_exam_7"
+
+            analytics_tags:
+              screen_group: "parent_exam"
+              funnel_stage: "branch_core"
+              screen_order: 6
+              branch_id: "parent_exam"
+              role: "parent"
+              goal: "exam"
+
+            implementation_notes:
+              - "Можно позже добавить карточку с преимуществами формата."
+              - "Формулировки должны оставаться человеческими, без канцелярита."
+
+        - screen:
+            id: "parent_exam_7"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 7 — зачем начинать с пробного"
+            purpose: >
+              Снять ключевые сомнения: какой у ребёнка уровень,
+              насколько всё критично по времени, с чего начинать и подойдёт ли преподаватель.
+
+            text: |
+              Если вы сейчас ищете подготовку к ОГЭ или ЕГЭ, то вам, скорее всего, важно не просто найти преподавателя.
+
+              Вам важно понять:
+
+              — какой у ребёнка реальный уровень сейчас
+              — где именно слабые места
+              — насколько всё критично по времени
+              — с чего лучше начинать подготовку
+              — и подойдёт ли ребёнку сам преподаватель
+
+              И это абсолютно нормальный вопрос.
+
+              Поэтому мы начинаем с пробного:
+              чтобы сначала спокойно разобраться в ситуации,
+              а потом уже понимать, как двигаться дальше.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_exam_8"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_exam_8"
+
+            analytics_tags:
+              screen_group: "parent_exam"
+              funnel_stage: "branch_core"
+              screen_order: 7
+              branch_id: "parent_exam"
+              role: "parent"
+              goal: "exam"
+
+            implementation_notes:
+              - "Не использовать кривые формулировки вроде 'не чтобы сразу продавать занятия'."
+
+        - screen:
+            id: "parent_exam_8"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 8 — как проходит пробное по ОГЭ / ЕГЭ"
+            purpose: >
+              Объяснить механику пробного и показать, что это полезный
+              шаг для понимания уровня и маршрута подготовки.
+
+            text: |
+              Пробное занятие у нас — это не просто первый урок.
+
+              Оно нужно, чтобы быстро понять, где ребёнок сейчас находится по отношению к экзамену и как лучше выстроить подготовку дальше.
+
+              На пробном мы обычно:
+
+              — знакомимся с учеником и уточняем его цель
+              — даём задания и вопросы по его текущему уровню
+              — смотрим, какие темы он уже понимает нормально, а где начинаются основные трудности
+              — разбираем один из моментов так, чтобы ребёнку уже на пробном стало понятнее
+              — в конце формируем понятный следующий шаг по подготовке
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_exam_9"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_exam_9"
+
+            analytics_tags:
+              screen_group: "parent_exam"
+              funnel_stage: "branch_core"
+              screen_order: 8
+              branch_id: "parent_exam"
+              role: "parent"
+              goal: "exam"
+
+            implementation_notes:
+              - "Позже сюда можно добавить фото/видео о пробном формате."
+
+        - screen:
+            id: "parent_exam_9"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 9 — что родитель получает после пробного"
+            purpose: >
+              Продать результат пробного как диагностику, ясность и маршрут подготовки.
+
+            text: |
+              После пробного у вас не остаётся ощущения “ну вроде позанимались”.
+
+              Вы получаете более понятную картину:
+
+              — что у ребёнка уже получается
+              — где он сейчас теряет баллы
+              — какие темы проседают сильнее всего
+              — с чего логично начинать подготовку
+              — какой формат работы подойдёт лучше
+
+              То есть пробное даёт не просто знакомство,
+              а первую диагностику и понятный маршрут дальше.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_exam_10"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_exam_10"
+
+            analytics_tags:
+              screen_group: "parent_exam"
+              funnel_stage: "branch_core"
+              screen_order: 9
+              branch_id: "parent_exam"
+              role: "parent"
+              goal: "exam"
+
+            implementation_notes:
+              - "Этот экран должен усиливать ценность пробного перед CTA."
+
+        - screen:
+            id: "parent_exam_10"
+            type: "cta"
+            scope: "parent_branch"
+            title: "Экран 10 — главный CTA"
+            purpose: >
+              Мягко перевести родителя в контакт с менеджером
+              для записи на пробное или вопроса.
+
+            text: |
+              Следующий шаг — просто написать менеджеру.
+
+              Он уточнит вашу ситуацию,
+              поможет сориентироваться,
+              подберёт подходящего преподавателя
+              и предложит удобное время для пробного.
+
+              Если вам так спокойнее, можно сначала просто задать вопрос без записи.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Записаться на пробное"
+                action: "open_trial_signup"
+                target: "manager_trial_signup_parent_exam"
+
+              - text: "Задать вопрос"
+                action: "open_manager_chat"
+                target: "manager_question_parent_exam"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Записаться на пробное": "manager_trial_signup_parent_exam"
+                "Задать вопрос": "manager_question_parent_exam"
+
+            analytics_tags:
+              screen_group: "parent_exam"
+              funnel_stage: "cta"
+              screen_order: 10
+              branch_id: "parent_exam"
+              role: "parent"
+              goal: "exam"
+
+            implementation_notes:
+              - "Если пользователь не нажал CTA, он должен перейти в nurture-цепочку этой ветки."
+
+      manager_messages:
+        trial_signup: |
+          Добрый день! Хочу записаться на пробное занятие по математике для подготовки к экзамену.
+        ask_question: |
+          Добрый день! У меня есть вопрос по подготовке к ОГЭ / ЕГЭ.
+
+      nurture:
+        id: "parent_exam_nurture"
+        purpose: >
+          Мягко догревать родителя, если он прошёл основную ветку,
+          но не написал менеджеру.
+
+        sequence:
+          - screen:
+              id: "parent_exam_follow_1"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 1 — хаос в подготовке"
+              purpose: >
+                Вернуть родителя в узнавание проблемы:
+                подготовка идёт кусками и без системы.
+
+              text: |
+                Одна из самых частых проблем в подготовке к экзамену — не то, что ребёнок вообще ничего не знает.
+
+                Проблема в том, что подготовка часто идёт кусками:
+                что-то решают,
+                что-то повторяют,
+                какие-то темы откладывают,
+                но общей системы нет.
+
+                И именно из-за этого часто теряется больше времени, чем кажется.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_1_parent_exam"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_exam_follow_2"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_1_parent_exam"
+                  "Читать дальше": "parent_exam_follow_2"
+
+              analytics_tags:
+                screen_group: "parent_exam"
+                funnel_stage: "nurture"
+                screen_order: 1
+                branch_id: "parent_exam"
+                role: "parent"
+                goal: "exam"
+
+          - screen:
+              id: "parent_exam_follow_2"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 2 — важность понять уровень"
+              purpose: >
+                Показать, что без понимания уровня легко тратить время не туда.
+
+              text: |
+                Перед экзаменом очень важно не просто “начать готовиться ещё сильнее”, а понять, где ребёнок находится сейчас.
+
+                Потому что без этого легко тратить время не на то:
+                повторять то, что уже более-менее понятно,
+                и при этом не замечать темы, которые реально тянут результат вниз.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_2_parent_exam"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_exam_follow_3"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_2_parent_exam"
+                  "Читать дальше": "parent_exam_follow_3"
+
+              analytics_tags:
+                screen_group: "parent_exam"
+                funnel_stage: "nurture"
+                screen_order: 2
+                branch_id: "parent_exam"
+                role: "parent"
+                goal: "exam"
+
+          - screen:
+              id: "parent_exam_follow_3"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 3 — снятие сомнения"
+              purpose: >
+                Снять сомнение и вернуть родителя к спокойной логике пробного.
+
+              text: |
+                Скорее всего, вам сейчас важно не просто срочно выбрать преподавателя.
+
+                Вам важно понять,
+                есть ли здесь для ребёнка понятная система,
+                подходит ли ему сам формат
+                и будет ли от этого реальный сдвиг в подготовке.
+
+                Поэтому мы и начинаем с пробного:
+                сначала разбираемся в ситуации,
+                а потом уже принимаем решение дальше.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_3_parent_exam"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_exam_follow_4"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_3_parent_exam"
+                  "Читать дальше": "parent_exam_follow_4"
+
+              analytics_tags:
+                screen_group: "parent_exam"
+                funnel_stage: "nurture"
+                screen_order: 3
+                branch_id: "parent_exam"
+                role: "parent"
+                goal: "exam"
+
+          - screen:
+              id: "parent_exam_follow_4"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 4 — мягкий возврат к действию"
+              purpose: >
+                Последний мягкий возврат к менеджеру или перевод
+                в общий полезный nurture.
+
+              text: |
+                Если захотите, можно просто написать менеджеру и коротко описать ситуацию.
+
+                Без обязательств.
+
+                Он поможет сориентироваться,
+                скажет, подойдёт ли вам такой формат,
+                и если да — предложит удобное время для пробного.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_4_parent_exam"
+
+                - text: "Пока просто читаю"
+                  action: "stay_in_nurture"
+                  target: "general_useful_nurture"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_4_parent_exam"
+                  "Пока просто читаю": "general_useful_nurture"
+
+              analytics_tags:
+                screen_group: "parent_exam"
+                funnel_stage: "nurture"
+                screen_order: 4
+                branch_id: "parent_exam"
+                role: "parent"
+                goal: "exam"
+
+        manager_messages:
+          follow_1: |
+            Добрый день! Похоже, у нас как раз есть проблема с хаотичной подготовкой. Хочу уточнить по пробному.
+          follow_2: |
+            Добрый день! Хочу уточнить, как у вас на пробном определяют уровень и слабые места.
+          follow_3: |
+            Добрый день! Хочу коротко описать нашу ситуацию и понять, подойдёт ли нам такой формат подготовки.
+          follow_4: |
+            Добрый день! Хочу описать нашу ситуацию и понять, подойдёт ли нам такой формат подготовки к экзамену.
+
+  - branch:
+      id: "parent_olymp"
+      role: "role_parent"
+      goal: "goal_olymp"
+      title: "Родитель → олимпиады / поступление"
+      purpose: >
+        Последовательно довести родителя до мысли, что для сильной цели нужен
+        не просто репетитор по математике, а точный подбор под конкретную задачу;
+        что сначала важно понять текущий уровень ребёнка относительно цели;
+        и что пробное — это логичный способ получить первую оценку ситуации и
+        подобрать правильный маршрут подготовки.
+
+      screens:
+        - screen:
+            id: "parent_olymp_4"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 4 — узнавание ситуации"
+            purpose: >
+              Показать родителю, что бот понимает его контекст:
+              цель уже выше среднего, нужен не просто преподаватель,
+              а понимание текущего уровня ребёнка относительно сильной задачи.
+
+            text: |
+              Поняли вас.
+
+              Когда цель — олимпиада, поступление или просто более сильный уровень математики, вопрос обычно уже не в том, “нужен ли репетитор вообще”.
+
+              Вопрос в другом:
+              какой у ребёнка уровень сейчас,
+              чего ему уже хватает,
+              а чего пока не хватает именно под эту цель.
+
+              Потому что в таких задачах недостаточно просто “заниматься математикой”.
+              Здесь важно понимать, куда именно вы хотите прийти и какой путь к этой цели будет для ребёнка правильным.
+
+              Сейчас коротко покажем, как мы в Менториуме с этим работаем 👇
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_olymp_5"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_olymp_5"
+
+            analytics_tags:
+              screen_group: "parent_olymp"
+              funnel_stage: "branch_core"
+              screen_order: 4
+              branch_id: "parent_olymp"
+              role: "parent"
+              goal: "olymp"
+
+            implementation_notes:
+              - "Первый экран ветки после общей сегментации."
+              - "Экран должен работать без медиа в MVP."
+
+        - screen:
+            id: "parent_olymp_5"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 5 — типичная ситуация родителя"
+            purpose: >
+              Углубить узнавание и назвать типичные запросы родителя
+              при сильной цели: олимпиада, поступление, сильная математическая среда.
+
+            text: |
+              Обычно в такой ситуации родители приходят к нам примерно с одним из таких запросов:
+
+              — ребёнок сильный, но хочется выйти на более высокий уровень
+              — есть цель поступления, но непонятно, насколько текущая база под неё подходит
+              — хочется подготовить ребёнка к олимпиадам или сильной математической среде
+              — нужен преподаватель, который сможет работать не “в среднем”, а под конкретную цель
+              — хочется понять, где сейчас потолок ребёнка и как его сдвигать дальше
+
+              И в такой момент важно не просто найти “ещё одного преподавателя по математике”,
+              а сначала понять текущий уровень ребёнка и подобрать формат работы именно под эту задачу.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_olymp_6"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_olymp_6"
+
+            analytics_tags:
+              screen_group: "parent_olymp"
+              funnel_stage: "branch_core"
+              screen_order: 5
+              branch_id: "parent_olymp"
+              role: "parent"
+              goal: "olymp"
+
+            implementation_notes:
+              - "Экран должен усиливать мысль: для сильной цели нужен не средний подход, а точный подбор."
+
+        - screen:
+            id: "parent_olymp_6"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 6 — как работает Менториум под сильные цели"
+            purpose: >
+              Показать механику сервиса и УТП школы именно в контексте
+              олимпиад, поступления и сильного математического уровня.
+
+            text: |
+              Поэтому в Менториуме мы не просто даём занятия по математике.
+
+              Мы выстраиваем работу так, чтобы она соответствовала именно той цели, ради которой вы пришли:
+              олимпиада,
+              поступление,
+              сильная школа,
+              или просто более высокий уровень математики.
+
+              Что это значит на практике:
+
+              — только индивидуальные занятия, без групп
+              — преподавателя подбираем под конкретную цель и текущий уровень ученика
+              — выстраиваем индивидуальный план подготовки
+              — каждую неделю даём индивидуальные контрольные под конкретную задачу
+              — отправляем родителю отчёты по прогрессу
+              — у каждого ученика есть личный ассистент-математик
+              — с ребёнком работают только молодые преподаватели, студенты топовых вузов России, чтобы ученик и преподаватель были на одной волне
+
+              То есть здесь важно не просто “заниматься”,
+              а идти по маршруту, который реально соответствует цели ребёнка.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_olymp_7"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_olymp_7"
+
+            analytics_tags:
+              screen_group: "parent_olymp"
+              funnel_stage: "branch_core"
+              screen_order: 6
+              branch_id: "parent_olymp"
+              role: "parent"
+              goal: "olymp"
+
+            implementation_notes:
+              - "Можно позже добавить карточку или короткое видео про сильные цели и индивидуальный формат."
+
+        - screen:
+            id: "parent_olymp_7"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 7 — зачем сначала пробное"
+            purpose: >
+              Снять сомнения родителя: насколько ребёнок близок к цели,
+              что нужно усиливать и какой формат подготовки ему подойдёт.
+
+            text: |
+              Если вы сейчас ищете занятия под олимпиаду, поступление или сильную математику, то вам, скорее всего, важно не просто найти преподавателя.
+
+              Вам важно понять:
+
+              — какой у ребёнка уровень сейчас
+              — насколько он уже близок к нужной цели
+              — что ему нужно усиливать в первую очередь
+              — какой преподаватель действительно подойдёт под такую задачу
+              — и какой формат подготовки даст результат
+
+              И это абсолютно нормальный вопрос.
+
+              Поэтому мы начинаем с пробного:
+              чтобы сначала спокойно разобраться в ситуации,
+              а потом уже понимать, как лучше двигаться дальше.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_olymp_8"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_olymp_8"
+
+            analytics_tags:
+              screen_group: "parent_olymp"
+              funnel_stage: "branch_core"
+              screen_order: 7
+              branch_id: "parent_olymp"
+              role: "parent"
+              goal: "olymp"
+
+            implementation_notes:
+              - "Экран должен продавать пробное как способ получить первую нормальную оценку ситуации."
+
+        - screen:
+            id: "parent_olymp_8"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 8 — как проходит пробное"
+            purpose: >
+              Объяснить механику пробного и показать, что это полезный шаг
+              для оценки текущего уровня ребёнка относительно сильной цели.
+
+            text: |
+              Пробное занятие у нас — это не просто первый урок.
+
+              Оно нужно, чтобы быстро понять, где ребёнок сейчас находится по отношению к своей цели и как лучше выстроить подготовку дальше.
+
+              На пробном мы обычно:
+
+              — знакомимся с учеником и уточняем его цель
+              — даём задания и вопросы по его текущему уровню
+              — смотрим, какие темы и типы задач он уже тянет уверенно, а где пока не хватает базы или техники
+              — объясняем один из моментов так, чтобы ребёнку уже на пробном стало понятнее
+              — в конце формируем понятный следующий шаг по подготовке
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_olymp_9"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_olymp_9"
+
+            analytics_tags:
+              screen_group: "parent_olymp"
+              funnel_stage: "branch_core"
+              screen_order: 8
+              branch_id: "parent_olymp"
+              role: "parent"
+              goal: "olymp"
+
+            implementation_notes:
+              - "Позже сюда можно добавить примеры задач, карточку или короткое видео."
+
+        - screen:
+            id: "parent_olymp_9"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 9 — что родитель получает после пробного"
+            purpose: >
+              Продать результат пробного как первую нормальную оценку ситуации
+              и понятный маршрут дальше.
+
+            text: |
+              После пробного у вас не остаётся ощущения “ну вроде позанимались”.
+
+              Вы получаете более понятную картину:
+
+              — какой у ребёнка уровень сейчас
+              — что у него уже получается хорошо
+              — чего пока не хватает под его цель
+              — с чего логично начинать подготовку
+              — какой формат работы и какой преподаватель подойдут лучше
+
+              То есть пробное даёт не просто знакомство,
+              а первую нормальную оценку ситуации и понятный маршрут дальше.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_olymp_10"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_olymp_10"
+
+            analytics_tags:
+              screen_group: "parent_olymp"
+              funnel_stage: "branch_core"
+              screen_order: 9
+              branch_id: "parent_olymp"
+              role: "parent"
+              goal: "olymp"
+
+            implementation_notes:
+              - "Этот экран усиливает ценность пробного перед CTA."
+
+        - screen:
+            id: "parent_olymp_10"
+            type: "cta"
+            scope: "parent_branch"
+            title: "Экран 10 — главный CTA"
+            purpose: >
+              Мягко перевести родителя в контакт с менеджером
+              для записи на пробное или вопроса.
+
+            text: |
+              Следующий шаг — просто написать менеджеру.
+
+              Он уточнит вашу ситуацию,
+              поможет сориентироваться,
+              подберёт подходящего преподавателя
+              и предложит удобное время для пробного.
+
+              Если вам так спокойнее, можно сначала просто задать вопрос без записи.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Записаться на пробное"
+                action: "open_trial_signup"
+                target: "manager_trial_signup_parent_olymp"
+
+              - text: "Задать вопрос"
+                action: "open_manager_chat"
+                target: "manager_question_parent_olymp"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Записаться на пробное": "manager_trial_signup_parent_olymp"
+                "Задать вопрос": "manager_question_parent_olymp"
+
+            analytics_tags:
+              screen_group: "parent_olymp"
+              funnel_stage: "cta"
+              screen_order: 10
+              branch_id: "parent_olymp"
+              role: "parent"
+              goal: "olymp"
+
+            implementation_notes:
+              - "Если пользователь не нажал CTA, он должен перейти в nurture-цепочку этой ветки."
+
+      manager_messages:
+        trial_signup: |
+          Добрый день! Хочу записаться на пробное занятие по математике под олимпиаду / поступление.
+        ask_question: |
+          Добрый день! У меня есть вопрос по занятиям по математике под олимпиаду / поступление.
+
+      nurture:
+        id: "parent_olymp_nurture"
+        purpose: >
+          Мягко догревать родителя, если он прошёл основную ветку,
+          но не написал менеджеру.
+
+        sequence:
+          - screen:
+              id: "parent_olymp_follow_1"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 1 — математики просто больше недостаточно"
+              purpose: >
+                Показать, что для сильной цели недостаточно просто добавить больше занятий.
+
+              text: |
+                В задачах вроде олимпиад или поступления самая частая ошибка — думать, что достаточно просто “добавить математики”.
+
+                На практике этого мало.
+
+                Сначала важно понять,
+                где ребёнок находится сейчас по отношению к цели,
+                и только потом уже строить подготовку дальше.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_1_parent_olymp"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_olymp_follow_2"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_1_parent_olymp"
+                  "Читать дальше": "parent_olymp_follow_2"
+
+              analytics_tags:
+                screen_group: "parent_olymp"
+                funnel_stage: "nurture"
+                screen_order: 1
+                branch_id: "parent_olymp"
+                role: "parent"
+                goal: "olymp"
+
+          - screen:
+              id: "parent_olymp_follow_2"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 2 — нужен точный подбор под задачу"
+              purpose: >
+                Показать, что для сильной цели важен не любой преподаватель,
+                а точный подбор под уровень и задачу ребёнка.
+
+              text: |
+                Когда цель сильная, обычно важно не просто найти преподавателя,
+                а подобрать человека именно под эту задачу.
+
+                Потому что одному ребёнку сначала нужно усиливать базу,
+                а другому уже важнее идти в более сложные задачи и технику решения.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_2_parent_olymp"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_olymp_follow_3"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_2_parent_olymp"
+                  "Читать дальше": "parent_olymp_follow_3"
+
+              analytics_tags:
+                screen_group: "parent_olymp"
+                funnel_stage: "nurture"
+                screen_order: 2
+                branch_id: "parent_olymp"
+                role: "parent"
+                goal: "olymp"
+
+          - screen:
+              id: "parent_olymp_follow_3"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 3 — нужна реальная база под цель"
+              purpose: >
+                Снять сомнение и вернуть родителя к спокойной логике:
+                сначала понять базу и маршрут, потом двигаться дальше.
+
+              text: |
+                Скорее всего, вам сейчас важно не просто “начать занятия”.
+
+                Вам важно понять,
+                есть ли у ребёнка реальная база под его цель,
+                какой путь будет для него разумным
+                и на что лучше всего опереться в подготовке сейчас.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_3_parent_olymp"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_olymp_follow_4"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_3_parent_olymp"
+                  "Читать дальше": "parent_olymp_follow_4"
+
+              analytics_tags:
+                screen_group: "parent_olymp"
+                funnel_stage: "nurture"
+                screen_order: 3
+                branch_id: "parent_olymp"
+                role: "parent"
+                goal: "olymp"
+
+          - screen:
+              id: "parent_olymp_follow_4"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 4 — мягкий возврат к действию"
+              purpose: >
+                Последний мягкий возврат к менеджеру или перевод
+                в общий полезный nurture.
+
+              text: |
+                Если захотите, можно просто написать менеджеру и коротко описать вашу задачу.
+
+                Без обязательств.
+
+                Он поможет сориентироваться,
+                скажет, подойдёт ли вам такой формат,
+                и если да — предложит удобное время для пробного.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_4_parent_olymp"
+
+                - text: "Пока просто читаю"
+                  action: "stay_in_nurture"
+                  target: "general_useful_nurture"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_4_parent_olymp"
+                  "Пока просто читаю": "general_useful_nurture"
+
+              analytics_tags:
+                screen_group: "parent_olymp"
+                funnel_stage: "nurture"
+                screen_order: 4
+                branch_id: "parent_olymp"
+                role: "parent"
+                goal: "olymp"
+
+        manager_messages:
+          follow_1: |
+            Добрый день! Хочу уточнить по пробному занятию под олимпиаду / поступление.
+          follow_2: |
+            Добрый день! Хочу понять, как вы определяете уровень ребёнка и подбираете преподавателя под цель.
+          follow_3: |
+            Добрый день! Хочу коротко описать нашу цель и понять, подойдёт ли нам такой формат занятий.
+          follow_4: |
+            Добрый день! Хочу описать нашу цель и понять, подойдёт ли нам такой формат подготовки.
+
+  - branch:
+      id: "parent_unsure"
+      role: "role_parent"
+      goal: "goal_unsure"
+      title: "Родитель → пока не знаю, хочу разобраться"
+      purpose: >
+        Последовательно довести родителя до мысли, что даже если запрос ещё
+        не оформился до конца, это нормальная ситуация; что сначала важно
+        спокойно понять, что происходит с математикой у ребёнка; и что
+        пробное — это логичный способ получить ясность и понять следующий шаг.
+
+      screens:
+        - screen:
+            id: "parent_unsure_4"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 4 — узнавание ситуации"
+            purpose: >
+              Показать родителю, что бот понимает его контекст:
+              ощущение, что с математикой что-то не так, уже есть,
+              но полной ясности пока нет.
+
+            text: |
+              Поняли вас.
+
+              Бывает так, что по математике уже есть ощущение: что-то идёт не так,
+              но пока не до конца понятно, насколько это серьёзно и что именно с этим делать.
+
+              Ребёнок где-то путается,
+              какие-то темы даются тяжелее,
+              уверенности нет,
+              но чёткой картины пока тоже нет.
+
+              И это нормальная ситуация.
+
+              В такой момент важнее всего не гадать,
+              а спокойно разобраться, что у ребёнка сейчас с математикой и какой следующий шаг для него будет правильным.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_unsure_5"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_unsure_5"
+
+            analytics_tags:
+              screen_group: "parent_unsure"
+              funnel_stage: "branch_core"
+              screen_order: 4
+              branch_id: "parent_unsure"
+              role: "parent"
+              goal: "unsure"
+
+            implementation_notes:
+              - "Первый экран ветки после общей сегментации."
+              - "Экран должен работать без медиа в MVP."
+
+        - screen:
+            id: "parent_unsure_5"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 5 — типичная ситуация родителя"
+            purpose: >
+              Углубить узнавание и назвать типичные состояния родителя,
+              у которого запрос ещё не до конца оформился.
+
+            text: |
+              Обычно в такой ситуации родители приходят к нам примерно с одним из таких ощущений:
+
+              — вроде бы уже есть вопросы по математике, но цель пока не до конца ясна
+              — непонятно, это просто временные трудности или уже накопились серьёзные пробелы
+              — ребёнок что-то делает, но уверенности всё равно нет
+              — хочется сначала понять реальную ситуацию, а уже потом решать, как действовать
+              — не хочется метаться между разными вариантами и выбирать вслепую
+
+              И в такой момент лучший первый шаг —
+              не пытаться сразу угадать, какой формат нужен,
+              а сначала спокойно понять, что именно происходит.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_unsure_6"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_unsure_6"
+
+            analytics_tags:
+              screen_group: "parent_unsure"
+              funnel_stage: "branch_core"
+              screen_order: 5
+              branch_id: "parent_unsure"
+              role: "parent"
+              goal: "unsure"
+
+            implementation_notes:
+              - "Экран должен усиливать мысль: запрос может быть ещё не оформлен, и это нормально."
+              - "Не перегружать экран дополнительными CTA."
+
+        - screen:
+            id: "parent_unsure_6"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 6 — как работает Менториум"
+            purpose: >
+              Показать механику сервиса и УТП школы в ситуации,
+              когда родителю сначала нужна ясность, а не готовое решение вслепую.
+
+            text: |
+              Поэтому в Менториуме мы не просто даём занятия по математике.
+
+              Мы сначала помогаем понять, какая у ребёнка ситуация сейчас,
+              а уже потом выстраиваем работу под его реальную задачу.
+
+              Что это значит на практике:
+
+              — только индивидуальные занятия, без групп
+              — преподавателя подбираем под цель и под самого ученика
+              — выстраиваем индивидуальный план подготовки
+              — каждую неделю даём индивидуальные контрольные под конкретную задачу
+              — отправляем родителю отчёты по прогрессу
+              — у каждого ученика есть личный ассистент-математик
+              — с ребёнком работают только молодые преподаватели, студенты топовых вузов России, чтобы ученик и преподаватель были на одной волне
+
+              То есть здесь не нужно заранее во всём разбираться самому —
+              мы помогаем сначала понять ситуацию, а потом уже двигаться дальше.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_unsure_7"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_unsure_7"
+
+            analytics_tags:
+              screen_group: "parent_unsure"
+              funnel_stage: "branch_core"
+              screen_order: 6
+              branch_id: "parent_unsure"
+              role: "parent"
+              goal: "unsure"
+
+            implementation_notes:
+              - "Можно позже добавить карточку с преимуществами формата."
+              - "Текст должен оставаться простым и спокойным."
+
+        - screen:
+            id: "parent_unsure_7"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 7 — зачем начинать с пробного"
+            purpose: >
+              Объяснить, что в ситуации неопределённости пробное — лучший первый шаг,
+              потому что оно даёт ясность.
+
+            text: |
+              Если вы пока не до конца понимаете, что именно сейчас нужно вашему ребёнку, это как раз тот случай, когда лучше всего начинать с пробного.
+
+              Потому что пробное помогает спокойно ответить на главные вопросы:
+
+              — что у ребёнка с математикой сейчас
+              — где именно слабые места
+              — насколько это критично
+              — нужен ли упор на базу, школьную программу, экзамен или более сильный уровень
+              — и какой преподаватель подойдёт лучше всего
+
+              Поэтому пробное здесь — это не формальность,
+              а способ получить ясность и понять, что делать дальше.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_unsure_8"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_unsure_8"
+
+            analytics_tags:
+              screen_group: "parent_unsure"
+              funnel_stage: "branch_core"
+              screen_order: 7
+              branch_id: "parent_unsure"
+              role: "parent"
+              goal: "unsure"
+
+            implementation_notes:
+              - "Экран должен продавать пробное как способ получить ясность, а не как формальность."
+
+        - screen:
+            id: "parent_unsure_8"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 8 — как проходит пробное"
+            purpose: >
+              Объяснить механику пробного и показать, что это полезный
+              и понятный первый шаг.
+
+            text: |
+              Пробное занятие у нас — это не просто первый урок.
+
+              Оно нужно, чтобы быстро понять текущую ситуацию ребёнка и помочь вам сориентироваться дальше.
+
+              На пробном мы обычно:
+
+              — знакомимся с учеником и смотрим, как он воспринимает математику
+              — даём задания и вопросы по его уровню
+              — смотрим, где именно начинается непонимание
+              — объясняем один из моментов так, чтобы ребёнку уже на пробном стало понятнее
+              — в конце формируем понятный следующий шаг
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_unsure_9"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_unsure_9"
+
+            analytics_tags:
+              screen_group: "parent_unsure"
+              funnel_stage: "branch_core"
+              screen_order: 8
+              branch_id: "parent_unsure"
+              role: "parent"
+              goal: "unsure"
+
+            implementation_notes:
+              - "Позже сюда можно добавить короткое видео или карточку о пробном."
+
+        - screen:
+            id: "parent_unsure_9"
+            type: "content"
+            scope: "parent_branch"
+            title: "Экран 9 — что родитель получает после пробного"
+            purpose: >
+              Продать результат пробного как снятие тумана и понимание следующего шага.
+
+            text: |
+              После пробного у вас появляется более понятная картина.
+
+              Вы начинаете видеть:
+
+              — что у ребёнка уже получается
+              — где именно основные слабые места
+              — насколько ситуация требует срочной работы
+              — в какую сторону логичнее двигаться дальше
+              — какой формат помощи подойдёт лучше всего
+
+              То есть пробное помогает не просто познакомиться,
+              а снять туман и понять, что делать дальше.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Дальше"
+                action: "go_to_screen"
+                target: "parent_unsure_10"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Дальше": "parent_unsure_10"
+
+            analytics_tags:
+              screen_group: "parent_unsure"
+              funnel_stage: "branch_core"
+              screen_order: 9
+              branch_id: "parent_unsure"
+              role: "parent"
+              goal: "unsure"
+
+            implementation_notes:
+              - "Этот экран усиливает ценность пробного перед CTA."
+
+        - screen:
+            id: "parent_unsure_10"
+            type: "cta"
+            scope: "parent_branch"
+            title: "Экран 10 — главный CTA"
+            purpose: >
+              Мягко перевести родителя в контакт с менеджером
+              для записи на пробное или вопроса.
+
+            text: |
+              Следующий шаг — просто написать менеджеру.
+
+              Он уточнит вашу ситуацию,
+              поможет сориентироваться,
+              подберёт подходящего преподавателя
+              и предложит удобное время для пробного.
+
+              Если вам так спокойнее, можно сначала просто задать вопрос без записи.
+
+            media:
+              enabled: false
+              type: null
+              file_id: null
+              caption: null
+              optional_in_future: true
+              supported_types:
+                - photo
+                - video
+                - document
+
+            buttons:
+              - text: "Записаться на пробное"
+                action: "open_trial_signup"
+                target: "manager_trial_signup_parent_unsure"
+
+              - text: "Задать вопрос"
+                action: "open_manager_chat"
+                target: "manager_question_parent_unsure"
+
+            menu_actions_available: true
+            menu_actions:
+              - action_id: "global_trial_signup"
+                text: "Записаться на пробное"
+              - action_id: "global_contact_manager"
+                text: "Написать менеджеру"
+
+            transitions:
+              on_button_click:
+                "Записаться на пробное": "manager_trial_signup_parent_unsure"
+                "Задать вопрос": "manager_question_parent_unsure"
+
+            analytics_tags:
+              screen_group: "parent_unsure"
+              funnel_stage: "cta"
+              screen_order: 10
+              branch_id: "parent_unsure"
+              role: "parent"
+              goal: "unsure"
+
+            implementation_notes:
+              - "Если пользователь не нажал CTA, он должен перейти в nurture-цепочку этой ветки."
+
+      manager_messages:
+        trial_signup: |
+          Добрый день! Хочу записаться на пробное занятие по математике, чтобы понять текущую ситуацию ребёнка.
+        ask_question: |
+          Добрый день! У меня есть вопрос по занятиям по математике. Пока хочу разобраться, какой формат нам подойдёт.
+
+      nurture:
+        id: "parent_unsure_nurture"
+        purpose: >
+          Мягко догревать родителя, если он прошёл основную ветку,
+          но не написал менеджеру.
+
+        sequence:
+          - screen:
+              id: "parent_unsure_follow_1"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 1 — неясно, насколько всё серьёзно"
+              purpose: >
+                Вернуть родителя в узнавание его состояния:
+                главная проблема — отсутствие ясности.
+
+              text: |
+                Иногда самое неприятное — даже не сама проблема, а то, что непонятно, насколько всё серьёзно.
+
+                Вроде бы есть ощущение, что с математикой что-то не так,
+                но пока нет ясности:
+                это уже накопившиеся пробелы
+                или просто временная просадка.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_1_parent_unsure"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_unsure_follow_2"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_1_parent_unsure"
+                  "Читать дальше": "parent_unsure_follow_2"
+
+              analytics_tags:
+                screen_group: "parent_unsure"
+                funnel_stage: "nurture"
+                screen_order: 1
+                branch_id: "parent_unsure"
+                role: "parent"
+                goal: "unsure"
+
+          - screen:
+              id: "parent_unsure_follow_2"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 2 — сначала нужно понять ситуацию"
+              purpose: >
+                Показать, что сначала важно понять, что происходит,
+                а не угадывать решение.
+
+              text: |
+                В такой ситуации главное — не пытаться сразу угадать правильное решение.
+
+                Сначала лучше понять:
+                что у ребёнка уже получается,
+                где начинаются основные трудности
+                и какой формат помощи ему вообще нужен.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_2_parent_unsure"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_unsure_follow_3"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_2_parent_unsure"
+                  "Читать дальше": "parent_unsure_follow_3"
+
+              analytics_tags:
+                screen_group: "parent_unsure"
+                funnel_stage: "nurture"
+                screen_order: 2
+                branch_id: "parent_unsure"
+                role: "parent"
+                goal: "unsure"
+
+          - screen:
+              id: "parent_unsure_follow_3"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 3 — не нужен репетитор на всякий случай"
+              purpose: >
+                Снять сомнение и вернуть родителя к спокойной логике:
+                сначала ясность, потом решение.
+
+              text: |
+                Скорее всего, вам сейчас важно не просто найти репетитора “на всякий случай”.
+
+                Вам важно спокойно разобраться в ситуации
+                и уже потом понять, как лучше действовать дальше.
+
+                Именно для этого у нас и есть пробное:
+                чтобы сначала появилась ясность.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_3_parent_unsure"
+
+                - text: "Читать дальше"
+                  action: "go_to_next_nurture"
+                  target: "parent_unsure_follow_4"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_3_parent_unsure"
+                  "Читать дальше": "parent_unsure_follow_4"
+
+              analytics_tags:
+                screen_group: "parent_unsure"
+                funnel_stage: "nurture"
+                screen_order: 3
+                branch_id: "parent_unsure"
+                role: "parent"
+                goal: "unsure"
+
+          - screen:
+              id: "parent_unsure_follow_4"
+              type: "nurture"
+              scope: "nurture"
+              title: "Дожим 4 — мягкий возврат к действию"
+              purpose: >
+                Последний мягкий возврат к менеджеру или перевод
+                в общий полезный nurture.
+
+              text: |
+                Если захотите, можно просто написать менеджеру и коротко описать ситуацию.
+
+                Без обязательств.
+
+                Он поможет сориентироваться,
+                скажет, подойдёт ли вам такой формат,
+                и если да — предложит удобное время для пробного.
+
+              media:
+                enabled: false
+                type: null
+                file_id: null
+                caption: null
+                optional_in_future: true
+                supported_types:
+                  - photo
+                  - video
+                  - document
+
+              buttons:
+                - text: "Написать менеджеру"
+                  action: "open_manager_chat"
+                  target: "manager_follow_4_parent_unsure"
+
+                - text: "Пока просто читаю"
+                  action: "stay_in_nurture"
+                  target: "general_useful_nurture"
+
+              menu_actions_available: true
+              menu_actions:
+                - action_id: "global_trial_signup"
+                  text: "Записаться на пробное"
+                - action_id: "global_contact_manager"
+                  text: "Написать менеджеру"
+
+              transitions:
+                on_button_click:
+                  "Написать менеджеру": "manager_follow_4_parent_unsure"
+                  "Пока просто читаю": "general_useful_nurture"
+
+              analytics_tags:
+                screen_group: "parent_unsure"
+                funnel_stage: "nurture"
+                screen_order: 4
+                branch_id: "parent_unsure"
+                role: "parent"
+                goal: "unsure"
+
+        manager_messages:
+          follow_1: |
+            Добрый день! Хочу уточнить по пробному, чтобы понять текущую ситуацию ребёнка по математике.
+          follow_2: |
+            Добрый день! Хочу уточнить, как вы помогаете понять, что именно сейчас нужно ребёнку по математике.
+          follow_3: |
+            Добрый день! Хочу коротко описать нашу ситуацию и понять, с чего лучше начать.
+          follow_4: |
+            Добрый день! Хочу описать нашу ситуацию и понять, подойдёт ли нам такой формат занятий.

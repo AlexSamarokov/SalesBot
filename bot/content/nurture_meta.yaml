@@ -1,0 +1,37 @@
+nurture_meta:
+  enabled: true
+
+  trigger_rules:
+    - trigger_id: "branch_finished_without_cta"
+      description: "Запускать nurture, если пользователь дошёл до финального CTA-экрана ветки, но не нажал ни одну CTA-кнопку."
+      required_conditions:
+        - "last_completed_screen_id is branch final CTA screen"
+        - "clicked_trial_cta = false"
+        - "clicked_manager_cta = false"
+
+  schedule:
+    nurture_step_1_delay_hours: 6
+    nurture_step_2_delay_hours: 24
+    nurture_step_3_delay_hours: 48
+    nurture_step_4_delay_hours: 72
+
+  behavior:
+    sequential: true
+    stop_if_manager_clicked: true
+    stop_if_trial_clicked: true
+    stop_if_user_blocked: true
+    stop_if_user_inactive_disabled: false
+
+  after_last_step:
+    action: "move_to_general_useful_nurture_segment"
+    target_segment: "general_useful_nurture"
+
+  general_useful_nurture_segment:
+    description: >
+      Сегмент пользователей, которые не конвертировались через базовую nurture-цепочку,
+      но остаются в базе для дальнейших полезных рассылок, ручных догревов и админских сообщений.
+
+  admin_notes:
+    - "Интервалы можно менять позже через код или конфиг."
+    - "В MVP можно использовать APScheduler или equivalent."
+    - "После клика по CTA nurture для пользователя должен останавливаться."

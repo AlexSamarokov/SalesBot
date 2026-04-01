@@ -1,0 +1,19 @@
+global_menu:
+  persistent_menu_enabled: true
+
+  actions:
+    - action_id: "global_trial_signup"
+      text: "Записаться на пробное"
+      action: "open_trial_signup"
+      default_target: "global_manager_trial_signup"
+
+    - action_id: "global_contact_manager"
+      text: "Написать менеджеру"
+      action: "open_manager_chat"
+      default_target: "global_manager_contact"
+
+  default_messages:
+    trial_signup: |
+      Добрый день! Хочу записаться на пробное занятие по математике.
+    contact_manager: |
+      Добрый день! У меня есть вопрос по занятиям по математике.

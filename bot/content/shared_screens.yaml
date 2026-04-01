@@ -1,0 +1,237 @@
+screens:
+  - screen:
+      id: "shared_welcome_1"
+      type: "content"
+      scope: "shared"
+      title: "Экран 1 — приветственный экран"
+      purpose: >
+        Быстро объяснить, что такое Менториум, показать ключевые УТП,
+        отстроить от группового и поточного формата, дать ощущение
+        индивидуального подхода и перевести пользователя к выбору цели.
+
+      text: |
+        Менториум — сообщество репетиторов по математике, где всё заточено под прогресс конкретного ученика.
+
+        Если вам важны не просто занятия “для галочки”, а понятная и системная работа под цель ребёнка, вам откликнется наш подход.
+
+        Не группы.
+        Не поток.
+        Не формат, где один преподаватель пытается одинаково вести всех сразу.
+
+        У нас всё строится под конкретного ученика:
+
+        — подбираем преподавателя под цель и под самого ребёнка
+        — выстраиваем индивидуальный план подготовки
+        — проводим только индивидуальные занятия
+        — каждую неделю даём индивидуальные контрольные под конкретную задачу
+        — закрепляем за каждым учеником личного ассистента-математика
+        — каждую неделю отправляем родителю отчёт по прогрессу
+        — работаем только с молодыми преподавателями, студентами топовых вузов России, чтобы ученику и преподавателю было проще быть на одной волне
+
+        То есть здесь математика не “для всех сразу”, а под конкретную задачу и конкретного ребёнка.
+
+        Сейчас покажем, как это работает именно в вашей ситуации 👇
+
+      media:
+        enabled: false
+        type: null
+        file_id: null
+        caption: null
+        optional_in_future: true
+        supported_types:
+          - photo
+          - video
+          - document
+
+      buttons:
+        - text: "Дальше"
+          action: "go_to_screen"
+          target: "shared_goal_select_2"
+
+      menu_actions_available: true
+      menu_actions:
+        - action_id: "global_trial_signup"
+          text: "Записаться на пробное"
+        - action_id: "global_contact_manager"
+          text: "Написать менеджеру"
+
+      transitions:
+        on_button_click:
+          "Дальше": "shared_goal_select_2"
+
+      analytics_tags:
+        screen_group: "shared"
+        funnel_stage: "entry"
+        screen_order: 1
+        branch_id: null
+        role: null
+        goal: null
+
+      implementation_notes:
+        - "Экран общий для всех пользователей."
+        - "В MVP экран может быть без медиа."
+        - "В будущем к экрану можно добавить фото, видео или документ без изменения логики."
+        - "Контент экрана должен храниться вне кода в YAML или JSON."
+        - "Кнопка 'Дальше' переводит пользователя на экран выбора цели."
+        - "Постоянное меню должно быть доступно на этом экране."
+
+  - screen:
+      id: "shared_goal_select_2"
+      type: "choice"
+      scope: "shared"
+      title: "Экран 2 — выбор цели"
+      purpose: >
+        Быстро сегментировать пользователя по его основной цели
+        и перевести к следующему шагу — выбору роли
+        с сохранением выбранной цели в состоянии пользователя.
+
+      text: |
+        Чтобы показать вам дальше только то, что действительно подходит под вашу ситуацию, выберите, какая цель вам сейчас ближе 👇
+
+      media:
+        enabled: false
+        type: null
+        file_id: null
+        caption: null
+        optional_in_future: true
+        supported_types:
+          - photo
+          - video
+          - document
+
+      buttons:
+        - text: "Подтянуть школьную математику"
+          action: "set_goal"
+          target: "goal_school_math"
+
+        - text: "ОГЭ / ЕГЭ"
+          action: "set_goal"
+          target: "goal_exam"
+
+        - text: "Олимпиады / поступление"
+          action: "set_goal"
+          target: "goal_olymp"
+
+        - text: "Пока не знаю, хочу разобраться"
+          action: "set_goal"
+          target: "goal_unsure"
+
+      menu_actions_available: true
+      menu_actions:
+        - action_id: "global_trial_signup"
+          text: "Записаться на пробное"
+        - action_id: "global_contact_manager"
+          text: "Написать менеджеру"
+
+      transitions:
+        on_button_click:
+          "Подтянуть школьную математику": "shared_role_select_3"
+          "ОГЭ / ЕГЭ": "shared_role_select_3"
+          "Олимпиады / поступление": "shared_role_select_3"
+          "Пока не знаю, хочу разобраться": "shared_role_select_3"
+
+      analytics_tags:
+        screen_group: "shared"
+        funnel_stage: "segmentation"
+        screen_order: 2
+        branch_id: null
+        role: null
+        goal: null
+
+      implementation_notes:
+        - "Этот экран должен сохранять выбранную цель в состоянии пользователя."
+        - "После выбора любой цели пользователь переходит на экран выбора роли."
+        - "В data/state пользователя должно записываться одно из значений: goal_school_math, goal_exam, goal_olymp, goal_unsure."
+        - "Контент экрана должен храниться вне кода в YAML или JSON."
+        - "Постоянное меню должно быть доступно на этом экране."
+
+  - screen:
+      id: "shared_role_select_3"
+      type: "choice"
+      scope: "shared"
+      title: "Экран 3 — выбор роли"
+      purpose: >
+        Определить, кто находится в боте — родитель или школьник,
+        сохранить роль в состоянии пользователя и на основе связки
+        goal + role перевести человека в нужную ветку.
+
+      text: |
+        И ещё один короткий шаг: кто вы?
+
+      media:
+        enabled: false
+        type: null
+        file_id: null
+        caption: null
+        optional_in_future: true
+        supported_types:
+          - photo
+          - video
+          - document
+
+      buttons:
+        - text: "Я родитель"
+          action: "set_role"
+          target: "role_parent"
+
+        - text: "Я школьник"
+          action: "set_role"
+          target: "role_student"
+
+      menu_actions_available: true
+      menu_actions:
+        - action_id: "global_trial_signup"
+          text: "Записаться на пробное"
+        - action_id: "global_contact_manager"
+          text: "Написать менеджеру"
+
+      transitions:
+        dynamic_routing: true
+        routing_rules:
+          - if_goal: "goal_school_math"
+            if_role: "role_parent"
+            go_to: "parent_schoolmath_4"
+
+          - if_goal: "goal_exam"
+            if_role: "role_parent"
+            go_to: "parent_exam_4"
+
+          - if_goal: "goal_olymp"
+            if_role: "role_parent"
+            go_to: "parent_olymp_4"
+
+          - if_goal: "goal_unsure"
+            if_role: "role_parent"
+            go_to: "parent_unsure_4"
+
+          - if_goal: "goal_school_math"
+            if_role: "role_student"
+            go_to: "student_schoolmath_4"
+
+          - if_goal: "goal_exam"
+            if_role: "role_student"
+            go_to: "student_exam_4"
+
+          - if_goal: "goal_olymp"
+            if_role: "role_student"
+            go_to: "student_olymp_4"
+
+          - if_goal: "goal_unsure"
+            if_role: "role_student"
+            go_to: "student_unsure_4"
+
+      analytics_tags:
+        screen_group: "shared"
+        funnel_stage: "segmentation"
+        screen_order: 3
+        branch_id: null
+        role: null
+        goal: null
+
+      implementation_notes:
+        - "Этот экран должен сохранять выбранную роль в состоянии пользователя."
+        - "После выбора роли бот должен проверить ранее сохранённую цель и по связке goal + role перевести пользователя в одну из 8 веток."
+        - "В data/state пользователя должно записываться одно из значений: role_parent или role_student."
+        - "Если по какой-то причине goal не найден в состоянии пользователя, бот должен вернуть пользователя на экран shared_goal_select_2."
+        - "Контент экрана должен храниться вне кода в YAML или JSON."
+        - "Постоянное меню должно быть доступно на этом экране."
